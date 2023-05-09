@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ChallengesWithTestsMark8
 {
@@ -7,52 +8,148 @@ namespace ChallengesWithTestsMark8
     {
         public bool CharacterIsALetter(char c)
         {
-            throw new NotImplementedException();
+            string alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            
+            for (int i = 0; i < alphabet.Length; i++)
+            {
+                if (alphabet[i] == c)
+                {
+                    return true;
+                }
+                
+            }
+            return false;
+            //return char.IsLetter(c);
         }
 
         public bool CountOfElementsIsEven(string[] vals)
         {
-            throw new NotImplementedException();
+            //if (vals.Length % 2 == 0) 
+            //{
+            //    return true;
+            //}
+            //return false;
+
+            return vals.Length % 2 == 0;    
         }
 
         public bool IsNumberEven(int number)
         {
-            throw new NotImplementedException();
+            //if(number % 2 == 0) 
+            //{
+            //    return true;
+            //}
+            //return false;
+
+            return number % 2 == 0;
         }
 
         public bool IsNumberOdd(int num)
         {
-            throw new NotImplementedException();
+            //if (number % 2 != 0)
+            //{
+            //    return true;
+            //}
+            //return false;
+            
+            return num % 2 != 0;
         }
 
         public double SumOfMinAndMax(IEnumerable<double> numbers)
         {
-            throw new NotImplementedException();
+            //if (numbers == null || numbers.Count() <= 0)
+            //{
+            //    return 0;
+            //}
+
+            //double max = 0;
+            //double min = 0;
+
+            //var list = numbers.ToList();
+
+            //for (int i = 0; i > list.Count - 1; i++)
+
+            //{
+            //    if (list[i] > list[i + 1])
+            //    {
+            //        max = list[i];
+            //    }
+            //}
+            //for (int i = 0; i < list.Count - 1; i++)
+            //{
+            //    if (list[i] < list[i + 1])
+            //    {
+            //        min = list[i];
+            //    }
+            //}
+            //return min + max;
+
+
+            return numbers == null || numbers.count() == 0 ? 0 : numbers.min() + numbers.max();
         }
 
         public int GetLengthOfShortestString(string str1, string str2)
         {
-            throw new NotImplementedException();
+            if (str1.Length < str2.Length)
+            {
+                return str1.Length;
+            }
+            else
+            {
+                return str2.Length;
+            }
+
         }
 
         public int Sum(int[] numbers)
         {
-            throw new NotImplementedException();
+            if (numbers == null)
+            {
+                return 0;
+            }
+            return numbers.Sum();
         }
 
         public int SumEvens(int[] numbers)
         {
-            throw new NotImplementedException();
+            if (numbers == null)
+            {
+                return 0;
+            }
+
+            int sum = 0;
+            foreach (int number in number)
+            {
+                if (number % 2 == 0)
+                { 
+                    sum += number;               
+                }
+            }
+            return sum;
+
+            return numbers.Where(number => number % 2 == 0).Sum();
         }
 
         public bool IsSumOdd(List<int> numbers)
         {
-            throw new NotImplementedException();
+            if (numbers == null)
+            {
+                return false;
+            }
+            return numbers.Sum() % 2 != 0;
+
         }
 
         public long CountOfPositiveOddsBelowNumber(long number)
         {
-            throw new NotImplementedException();
+            if (number <= 0)
+            {
+                return 0;
+            }
+            else
+            {
+                return number / 2;
+            }
         }
     }
 }
